@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindScan - Video Analysis</title>
+    <link rel="stylesheet" href="Analysis.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar (same as dashboard) -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <i class="fas fa-brain logo-icon"></i>
+                <div class="logo-text">MindScan</div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="active"><a href="analysis.html"><i class="fas fa-video"></i> Analysis</a></li>
+                <li><a href="#"><i class="fas fa-history"></i> History</a></li>
+                <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header class="dashboard-header">
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1>Video Analysis</h1>
+        </header>
+
+        <div class="analysis-container">
+            <!-- Video Upload Window -->
+            <div class="upload-window">
+                <div class="upload-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3>Upload Presentation Video</h3>
+                <p>Select a video file to analyze your anxiety levels</p>
+                
+                <input type="file" id="video-upload" accept="video/*" hidden>
+                <label for="video-upload" class="btn-primary">
+                    <i class="fas fa-upload"></i> Select Video
+                </label>
+                
+                <div class="file-info hidden" id="file-info">
+                    <span id="file-name">No file selected</span>
+                    <button id="remove-file" class="btn-text">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Analysis Results (hidden initially) -->
+            <div class="analysis-results hidden" id="analysis-results">
+                <h3><i class="fas fa-chart-line"></i> Analysis Complete</h3>
+                <div class="result-metric">
+                    <div class="metric-label">Anxiety Level</div>
+                    <div class="metric-value">72%</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 72%"></div>
+                    </div>
+                </div>
+                <button class="btn-primary" id="view-details">
+                    <i class="fas fa-arrow-right"></i> View Detailed Report
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="Analysis.js"></script>
+</body>
+</html>

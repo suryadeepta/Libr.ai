@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lirb.AI - Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Hidden Sidebar Navigation -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-container">
+                <i class="fas fa-brain logo-icon"></i>
+                <div class="logo-text">Lirb.AI</div>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="#"><i class="fas fa-video"></i> Record New</a></li>
+                <li><a href="#"><i class="fas fa-history"></i> History</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <header class="dashboard-header">
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1>Presentation Anxiety Analysis</h1>
+        </header>
+
+        <div class="dashboard-container">
+            <!-- Presentation Setup Section -->
+            <section class="setup-section">
+                <h2><i class="fas fa-cog"></i> Presentation Setup</h2>
+                <form class="setup-form">
+                    <div class="form-group">
+                        <label for="education-level">Education Level</label>
+                        <select id="education-level">
+                            <option value="">Select your education level</option>
+                            <option value="high-school">High School</option>
+                            <option value="undergrad">Undergraduate</option>
+                            <option value="grad">Graduate</option>
+                            <option value="professional">Professional</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="presentation-topic">Presentation Topic</label>
+                        <input type="text" id="presentation-topic" placeholder="What is your presentation about?">
+                    </div>
+                    <div class="form-group">
+                        <label for="topic-depth">How would you rate your depth of knowledge on this topic?</label>
+                        <div class="slider-container">
+                            <input type="range" id="topic-depth" min="1" max="10" value="5">
+                            <div class="slider-labels">
+                                <span>Novice</span>
+                                <span>Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="audience-size">Expected Audience Size</label>
+                        <select id="audience-size">
+                            <option value="small">Small (1-10 people)</option>
+                            <option value="medium">Medium (11-50 people)</option>
+                            <option value="large">Large (50+ people)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">Create Dashboard</button>
+                </form>
+            </section>
+
+            <!-- Dashboard Placeholder -->
+            <section class="dashboard-placeholder hidden">
+                <div class="dashboard-header">
+                    <h2><i class="fas fa-tachometer-alt"></i> Your Anxiety Dashboard</h2>
+                    <button id="analyze-new-btn" class="btn-secondary">
+                        <i class="fas fa-video"></i> Analyze New Presentation
+                    </button>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>Overall Anxiety Level</h3>
+                            <div class="metric-value">--</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <p class="metric-description">Waiting for video analysis...</p>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>Confidence Score</h3>
+                            <div class="metric-value">--</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <p class="metric-description">Waiting for video analysis...</p>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>Speech Clarity</h3>
+                            <div class="metric-value">--</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <p class="metric-description">Waiting for video analysis...</p>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <h3>Body Language</h3>
+                            <div class="metric-value">--</div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <p class="metric-description">Waiting for video analysis...</p>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3>Anxiety Over Time</h3>
+                        <div class="chart-placeholder">
+                            <p>Video analysis will display your anxiety patterns throughout the presentation</p>
+                        </div>
+                    </div>
+
+                    <div class="tips-card">
+                        <h3>Personalized Tips</h3>
+                        <div class="tips-placeholder">
+                            <p>After analysis, you'll receive customized suggestions to improve your presentation skills</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video Upload Modal -->
+            <div class="modal hidden" id="upload-modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2><i class="fas fa-video"></i> Upload Your Presentation</h2>
+                    <div class="upload-options">
+                        <div class="upload-option">
+                            <i class="fas fa-video"></i>
+                            <h3>Record New Video</h3>
+                            <p>Record yourself giving the presentation directly through your webcam</p>
+                            <button class="btn-primary">Start Recording</button>
+                        </div>
+                        <div class="upload-option">
+                            <i class="fas fa-upload"></i>
+                            <h3>Upload Existing Video</h3>
+                            <p>Upload a pre-recorded video file of your presentation</p>
+                            <input type="file" id="video-upload" accept="video/*" hidden>
+                            <label for="video-upload" class="btn-primary">Choose File</label>
+                        </div>
+                    </div>
+                    <div class="analysis-progress hidden">
+                        <h3>Analyzing Your Presentation</h3>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="progress-text">0%</div>
+                        </div>
+                        <p>Our AI is analyzing your facial expressions, voice patterns, and body language...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Dashboard.js"></script>
+</body>
+</html>

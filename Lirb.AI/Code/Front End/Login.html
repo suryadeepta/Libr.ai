@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lirb.AI - Anxiety Analysis</title>
+    <link rel="stylesheet" href="Login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="logo.png" alt="Lirb.AI Logo" class="logo-img">
+            <div class="logo-text">Lirb.AI</div>
+        </div>
+    
+        <nav class="nav">
+            <ul>
+                <li><a href="#" class="active">Login</a></li>
+                <li><a href="#">How it Works</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="logo_image">
+            <img src="Logo.png" alt="Lirb.AI Logo" class="logo_image">
+        </div>
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button class="tab-btn active" id="login-tab">Login</button>
+                <button class="tab-btn" id="signup-tab">Sign Up</button>
+            </div>
+
+            <div class="auth-form" id="login-form">
+                <h2>Welcome Back</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                    <div class="auth-footer">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="auth-form hidden" id="signup-form">
+                <h2>Create Account</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-username">Username</label>
+                        <input type="text" id="signup-username" placeholder="Choose a username">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-age">Age</label>
+                        <input type="number" id="signup-age" placeholder="Enter your age" min="18" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-profession">Profession</label>
+                        <select id="signup-profession">
+                            <option value="">Select your profession</option>
+                            <option value="student">Student</option>
+                            <option value="professional">Professional</option>
+                            <option value="healthcare">Healthcare Worker</option>
+                            <option value="educator">Educator</option>
+                            <option value="creative">Creative Professional</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" placeholder="Create a password">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm">Confirm Password</label>
+                        <input type="password" id="signup-confirm" placeholder="Confirm your password">
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                    </div>
+                    <button type="submit" class="btn-primary">Create Account</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="features">
+            <h3>How Lirb.AI Works</h3>
+            <div class="feature-cards">
+                <div class="card">
+                    <div class="card-icon">📷</div>
+                    <h4>Upload Video</h4>
+                    <p>Record or upload a short video of yourself speaking or performing a task.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🧠</div>
+                    <h4>AI Analysis</h4>
+                    <p>Our CNN analyzes facial expressions, voice patterns, and micro-expressions.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h4>Get Report</h4>
+                    <p>Receive a detailed anxiety level report with actionable insights.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Lirb.AI</h4>
+                <p>AI-powered mental wellness analysis</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>hello@Lirb.AI.ai</p>
+                <div class="social-icons">
+                    <a href="#">📱</a>
+                    <a href="#">🐦</a>
+                    <a href="#">💼</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Lirb.AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="Login.js"></script>
+</body>
+</html>
